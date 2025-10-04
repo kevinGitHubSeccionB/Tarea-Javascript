@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" src="JS/script.JS"></script>
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1> Titulo</h1>
-    <input type="button" name="prueba" value="prueba1" onclick="otraFuncion(); mostrarvariables(); concatenarVariables('kevin ', 'juan');">
-    <input type="button" name="prueba2" value="Mostrar objetos" onclick="mostraobjeto();">
-    <input type="button" name="prueba3" value="Mostrar objetos clasicos" onclick="mostraobjetosClasicos();">
-    <input type="button" name="bitacora" value="Mostrar bitacora" onclick="bitacora();">
-    <input type="text" name="cajaDetexto" id="prueba4">
-    <input type="button" name="prueba5" value="Mostrar texto" onclick="ManipularElementosDelDom();">
-    <input type="button" name="prueba6" value="Eliminar texto" onclick="borraValores(prueba4);">
-    <input type="button" name="prueba7" value="crear elementos" onclick="CrearElementosEnEjecusion();">
-    <input type="button" name="prueba8" value="Eliminar elementos" onclick="eliminarElementos();">
+    <div class="container">
+        <h1>LISTA DE COMPRAS</h1>
 
-
-    <div id="contenedor">
         
+        <button id="modoBtn" class="modo-btn">Modo Oscuro</button>
+
+        <div class="input-area">
+            <input type="text" id="compraInput" placeholder="Escribe un producto...">
+            <button id="agregarBtn">Agregar</button>
+        </div>
+
+        <ul id="listaCompras"></ul>
     </div>
+
+    <script type="text/javascript" src="JS/script.JS"></script>
 </body>
 </html>

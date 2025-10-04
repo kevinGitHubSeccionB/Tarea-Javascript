@@ -1,0 +1,139 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcfcfc;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 60px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+.modo-btn {
+    display: block;
+    margin: 0 auto 15px auto;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.modo-btn:hover {
+    background-color: #555;
+}
+
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#compraInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#agregarBtn {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#agregarBtn:hover {
+    background-color: #45a049;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completada {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button.eliminar {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+button.eliminar:hover {
+    background-color: #c0392b;
+}
+
+
+body.dark {
+    background-color: #121212;
+    color: #b507bb;
+}
+
+body.dark .container {
+    background-color: #1e1e1e;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+}
+
+body.dark h1 {
+    color: #f0f0f0;
+}
+
+body.dark li {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark #compraInput {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark #agregarBtn {
+    background-color: #3ea76a;
+}
+
+body.dark .modo-btn {
+    background-color: #a13eb4;
+    color: #121212;
+}

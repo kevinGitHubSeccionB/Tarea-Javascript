@@ -1,84 +1,52 @@
 window.onload=function(){
-    //alert("viembenido a la diweb");
+    alert("BIENVENIDO A LA LISTA DE COMPRAS ONLINE");
 }
 
-function otraFuncion(){
-    console.log("mensaje 1");
-}
 
-function mostrarvariables(){
-    let variable=12345;
-    let variableString="hola 1";
-    let variableArray= ["elemento 1", "elemento 2"];
-    console.log(variable);
-    console.log(variableString);
-    console.log(variableArray);
-    console.log(variableArray[0]);
-}
+const input = document.getElementById("compraInput");
+const botonAgregar = document.getElementById("agregarBtn");
+const lista = document.getElementById("listaCompras");
+const botonModo = document.getElementById("modoBtn");
 
-function concatenarVariables(parametro1, parametro2){
-    let texto= parametro1+parametro2;
-    console.log(texto);
 
-}
-
-function mostraobjeto(){
-    let objetoTipoJson={"elemento1":"valor1", "elemento2":"valor2", "elemento3":"valor3"}
-    console.log(objetoTipoJson);
-    console.log(objetoTipoJson.elemento1);
-}
-
-function mostraobjetosClasicos(){
-    let objeto= new Object();
-    objeto.nombre= 'alumno';
-    objeto.correo= 'correo@gmail.com';
-    objeto.telefono= 47264325;
-    console.log(objeto.correo);
-    console.log(objeto);
-    funcionAnidada(objeto);
-    eliminarpropiedadDeObjetos(objeto);
-}
-
-function funcionAnidada(argument){
-    console.log(argument.nombre);
-}
-
-function eliminarpropiedadDeObjetos(objeto){
-    if(delete objeto.correo){
-        console.log(objeto);
+botonAgregar.addEventListener("click", () => {
+    const texto = input.value.trim();
+    if (texto === "") {
+        alert("Por favor escribe un producto.");
+        return;
     }
+
+    const li = document.createElement("li");
+    li.textContent = texto;
+
     
-}
+    const btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "✖";
+    btnEliminar.classList.add("eliminar");
 
-function ManipularElementosDelDom(){
-    let elemento=document.getElementById("prueba4");
-    let elemento2=document.getElementsByName("cajaDetexto")[0].value;
-
-    console.log(elemento.value);
-    console.log(elemento2);
-}
-
-function borraValores(idElemento){
-    idElemento.value="";
-    console.log(idElemento.value);
-
-}
-
-function CrearElementosEnEjecusion(){
-    let e=document.createElement('div');
-    let container=document.getElementById("contenedor");
-    e.append("texto de pruebas");
-    container.append(e);
     
-}
+    li.addEventListener("click", () => {
+        li.classList.toggle("completada");
+    });
 
-function eliminarElementos(){
-    let elemento = document.getElementById("contenedor");
-    contenedor.remove();
-}
+    
+    btnEliminar.addEventListener("click", (e) => {
+        e.stopPropagation();
+        li.remove();
+    });
+
+    li.appendChild(btnEliminar);
+    lista.appendChild(li);
+    input.value = "";
+});
 
 
-//*************** */
-function bitacora(){
-    alert ("minuto 55:28 elementos del dom del video");
-}
+botonModo.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        botonModo.textContent = "Modo Claro";
+    } else {
+        botonModo.textContent = "Modo Oscuro";
+    }
+});
